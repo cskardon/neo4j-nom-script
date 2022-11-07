@@ -1,8 +1,8 @@
 # Imports
-if($null -eq $neo4jVersion){
+if($null -eq $neo4jLocation){
     . .\scripts\version.ps1
+    . .\scripts\shared-vars.ps1
 }
-
 
 function Test-Parameters([hashtable] $argsToCheck){
         <#

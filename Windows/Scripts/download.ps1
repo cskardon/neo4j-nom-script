@@ -13,8 +13,7 @@ Write-Host "Downloading - there is no progress indicator! Please be patient!" -F
 # URLs for each product
 $urls = @{}
 $urls.Add('neo4j',"https://neo4j.com/artifact.php?name=$($neo4jZip)")
-$urls.Add('jre',"https://cdn.azul.com/zulu/bin/$($jreZip)")
-$urls.Add('nomjre',"https://cdn.azul.com/zulu/bin/$($nomJreZip)")
+$urls.Add('jre',"https://github.com/adoptium/temurin$($javaVersion)-binaries/releases/download/jdk-$($temurinURLVersion)/$($jreZip)")
 $urls.Add('nom', "https://dist.neo4j.org/ops-manager/$($nomVersion)/$($nomZip)")
 $urls.Add('openssl', "https://sourceforge.net/projects/openssl-for-windows/files/$($openSslZip)/download")
 
@@ -22,12 +21,11 @@ $urls.Add('openssl', "https://sourceforge.net/projects/openssl-for-windows/files
 $locations = @{}
 $locations.Add('neo4j', (Get-Location).Path + "\install\$($neo4jZip)")
 $locations.Add('jre', (Get-Location).Path + "\install\$($jreZip)")
-$locations.Add('nomjre', (Get-Location).Path + "\install\$($nomJreZip)")
 $locations.Add('nom', (Get-Location).Path + "\install\$($nomZip)")
 $locations.Add('openssl', (Get-Location).Path + "\install\$($opensslZip)")
 
 # Catalog of products
-$catalog = "neo4j","jre","nomjre","nom","openssl"
+$catalog = "neo4j","jre","nom","openssl"
 
 # Create install folder
 Write-Host "Creating 'install' folder ... " -NoNewline;
