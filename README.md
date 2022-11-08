@@ -8,7 +8,6 @@ Windows only at the moment.
 This will download a copy of 
 * Neo4j Enterprise
 * Neo4j Ops Manager (NOM)
-* Java 11 SDK
 * Java 17 SDK
 * OpenSSL (on Windows)
 * Scripts (from this repository)
@@ -65,8 +64,9 @@ Parameters are passed in via the standard PowerShell syntax, i.e. hyphen then na
 
 As this is for local test versions, the assumption is that you would possibly be running another Neo4j instance locally as well, so the default ports for the NOM Neo4j Server are:
 
-* Bolt: `7688`
+* Bolt: `7689`
 * HTTP: `7475`
+* Discovery: `5100`
 
 # All installed? Now what?!
 

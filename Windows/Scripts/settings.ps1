@@ -44,7 +44,9 @@ $configLines = (
     "server.bolt.advertised_address=:$nomNeo4jBoltPort",
     "server.http.listen_address=:$nomNeo4jHttpPort",
     "server.http.advertised_address=:$nomNeo4jHttpPort",
-    "server.backup.listen_address=0.0.0.0:$nomNeo4jBackupPort"
+    "server.backup.listen_address=0.0.0.0:$nomNeo4jBackupPort",
+    "server.discovery.listen_address=:$nomNeo4jServerDiscoveryPort",
+    "server.discovery.advertised_address=:$nomNeo4jServerDiscoveryPort"
 )
 
 Write-Host "Adding config to " $configFileLocation

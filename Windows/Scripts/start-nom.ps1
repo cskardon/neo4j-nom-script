@@ -8,17 +8,13 @@ Write-Host -ForegroundColor Green -BackgroundColor Black "Starting Neo4j Ops Man
 . .\scripts\shared-vars.ps1
 . .\scripts\functions.ps1
 
+Write-Host "Setting Java Environment for this session ... " -NoNewline
+. .\scripts\environment-java-17.ps1
+Write-Host " Done!" -ForegroundColor Green
+
 if(!(Test-Parameters(@{ Password = $Password; SslPassword = $SslPassword}))){
     break
 }
-
-
-Write-Host "Setting Java Environment for this session ... " -NoNewline
-if (Test-Path env:_JAVA_OPTIONS) {
-  Remove-Item env:_JAVA_OPTIONS
-}
-$env:JAVA_HOME = $javaJRELocation
-$env:PATH = "$($javaJRELocation)\bin;" + $env:PATH
 
 $nomLocation = Join-Path (Get-Location).Path "neo4j-ops-manager-server-$($nomVersion)\lib\"
 
