@@ -1,8 +1,6 @@
 # Version
 . .\scripts\version.ps1
-
-# Java Location
-$javaJRELocation = Join-Path (Get-Location).Path "zulu$($nomZuluVersion)-ca-jre$($nomJreVersion)-win_x64"
+. .\scripts\shared-vars.ps1
 
 # Environment
 if (Test-Path env:_JAVA_OPTIONS) {

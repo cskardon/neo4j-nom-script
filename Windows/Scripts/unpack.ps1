@@ -24,7 +24,6 @@ Write-Host "Unpacking the downloads..."
 $archives = @{}
 $archives.Add('neo4j', (Get-Location).Path + "\install\$($neo4jZip)")
 $archives.Add('jre', (Get-Location).Path + "\install\$($jreZip)")
-$archives.Add('nomjre', (Get-Location).Path + "\install\$($nomJreZip)")
 $archives.Add('nom', (Get-Location).Path + "\install\$($nomZip)")
 $archives.Add('nomagent', (Get-Location).Path + "\neo4j-ops-manager-server-$($nomVersion)\$($nomAgentZip)")
 $archives.Add('openssl', (Get-Location).Path + "\install\$($opensslZip)")
@@ -35,11 +34,10 @@ $locations.Add('neo4j', (Get-Location).Path + '\')
 $locations.Add('jre', (Get-Location).Path + '\')
 $locations.Add('nom', (Get-Location).Path + '\')
 $locations.Add('nomagent', (Get-Location).Path + '\')
-$locations.Add('nomjre', (Get-Location).Path + '\')
 $locations.Add('openssl', (Get-Location).Path + '\')
 
 # Catalog of products
-$catalog = "neo4j","jre","nom","nomagent","nomjre","openssl"
+$catalog = "neo4j","jre","nom","nomagent","openssl"
 
 # Actual unpack
 Foreach ($item in $catalog) {

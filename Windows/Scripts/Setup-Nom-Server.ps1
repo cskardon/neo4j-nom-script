@@ -33,7 +33,6 @@ if($Stage -eq "" -or $Stage -eq "scripts"){
     $scriptNames = (
         "agent-settings.ps1",
         "download.ps1",
-        "environment-java-11.ps1",
         "environment-java-17.ps1",
         "functions.ps1",
         "settings.ps1",
